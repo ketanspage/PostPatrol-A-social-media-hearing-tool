@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Results</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+  color: black;
+  text-align: center;
+}
+
+h1:hover {
+  color: purple;
+  font-size: 2.2em; /* Adjust the font size as per your preference */
+}
+
+    .card {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      background-color: #f9f9f9;
+      position: relative;
+      background-image: url('https://freelinkedinbackgrounds.com/wp-content/uploads/2015/01/abstract_0007.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      color: white;
+    }
+
+    .card h2 {
+      margin-top: 0;
+    }
+
+    .card p {
+      margin-bottom: 5px;
+    }
+
+    .card ul {
+      margin-top: 5px;
+      margin-bottom: 10px;
+    }
+
+    .card li {
+      list-style-type: none;
+    }
+
+    .card hr {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .card-date-time {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+    
+    .card-timestamp {
+      position: absolute;
+      top: 30px;
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Search Results</h1>
+  {% for post in post_data %}
+    <div class="card">
+      <h2>{{ post.title }}</h2>
+      <p><strong>Caption:</strong> {{ post.caption }}</p>
+      <p><strong>Date and Time:</strong> {{ post.date_time }}</p>
+      <p><strong>Timestamp:</strong> {{ post.timestamp }}</p>
+      <p><strong>Username:</strong> {{ post.username }}</p>
+      <p><strong>Full Name:</strong> {{ post.fullname }}</p>
+      <h3>Sentiment Analysis:</h3>
+      <ul>
+        {% for sentiment in post.sentiment_analysis %}
+          <li><strong>Sentiment Analysis:</strong>{{ sentiment.label }} - {{ sentiment.score }}</li>
+        {% endfor %}
+      </ul>
+      <p><strong>Category:</strong> {{ post.category }}</p>
+    </div>
+    
+  {% endfor %}
+</body>
+</html>
+

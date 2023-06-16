@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Keyword Search</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-pZqNJ9ZUU8fCByhWfzJqRMpUoxSsVmYBJRt8vV5omH6XX1HTuBUDptn6zbi1PEIYdDIKQsU6yX4x3HtwDz9b5g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      height: 200px;
+      background-image: url('https://imageio.forbes.com/specials-images/imageserve/61b749b5b6c0736422dda7ab/0x0.jpg?format=jpg&width=1600');
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+
+    h1, h4 {
+      color: #ffffff;
+    }
+
+    form {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"] {
+      padding: 5px;
+      width: 200px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      background-color: #ce2786;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+
+    button i {
+      margin-right: 5px;
+      animation: spin 1s infinite;
+    }
+
+    button:hover {
+      background-color: #45a049;
+      transform: scale(1.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-pZqNJ9ZUU8fCByhWfzJqRMpUoxSsVmYBJRt8vV5omH6XX1HTuBUDptn6zbi1PEIYdDIKQsU6yX4x3HtwDz9b5g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+  <div>
+    <h4>Welcome to Post Patrol Search Window</h4>
+  </div>
+  <h1 class="header"><b>Get Started With a Keyword:</b></h1>
+  <form method="POST">
+    <label for="keyword">Keyword:</label>
+    <input type="text" id="keyword" name="keyword" required>
+    <br/>
+    <button formaction="/youtube">
+      <i class="fab fa-youtube"></i> YouTube
+    </button>
+    <br/>
+    <button formaction="/instagram">
+      <i class="fab fa-instagram"></i> Instagram
+    </button>
+    <br/>
+    <button formaction="/twitter">
+      <i class="fab fa-twitter"></i> Twitter
+    </button>
+    <br/>
+  </form>
+</body>
+</html>
